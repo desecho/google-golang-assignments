@@ -9,7 +9,8 @@ import (
 
 func main() {
 	var x string
-	var slice = make([]int, 0, 3)
+	capacity := 3
+	var slice = make([]int, 0, capacity)
 
 	for {
 		fmt.Printf("Enter an integer: ")
