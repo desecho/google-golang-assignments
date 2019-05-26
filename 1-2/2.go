@@ -19,9 +19,7 @@ func main() {
 	}
 	x = strings.ToLower(x)
 	x = strings.TrimSpace(x)
-	first_char := string(x[0])
-	last_char := string(x[len(x)-1])
-	if first_char == "i" && last_char == "n" && strings.Contains(x, "a") {
+	if strings.HasPrefix(x, "i") && strings.Contains(x, "a") && strings.HasSuffix(x, "n") {
 		fmt.Printf("Found!\n")
 	} else {
 		fmt.Printf("Not Found!\n")
