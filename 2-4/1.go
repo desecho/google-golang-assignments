@@ -27,29 +27,29 @@ func (_ *Cow) Speak() {
 
 type Bird struct{}
 
-func (_ Bird) Eat() {
+func (_ *Bird) Eat() {
 	fmt.Println("worms")
 }
 
-func (_ Bird) Move() {
+func (_ *Bird) Move() {
 	fmt.Println("fly")
 }
 
-func (_ Bird) Speak() {
+func (_ *Bird) Speak() {
 	fmt.Println("peep")
 }
 
 type Snake struct{}
 
-func (_ Snake) Eat() {
+func (_ *Snake) Eat() {
 	fmt.Println("mice")
 }
 
-func (_ Snake) Move() {
+func (_ *Snake) Move() {
 	fmt.Println("slither")
 }
 
-func (_ Snake) Speak() {
+func (_ *Snake) Speak() {
 	fmt.Println("hsss")
 }
 
