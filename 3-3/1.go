@@ -4,29 +4,10 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
-
-func Swap(slice []int, i int) {
-	currentElement := slice[i]
-	nextElement := slice[i+1]
-	slice[i+1] = currentElement
-	slice[i] = nextElement
-}
-
-func BubbleSort(slice []int) {
-	sliceLength := len(slice)
-	for i, v := range slice {
-		if i+1 == sliceLength {
-			break
-		}
-		if v > slice[i+1] {
-			Swap(slice, i)
-			BubbleSort(slice)
-		}
-	}
-}
 
 func GetStringFromInput() string {
 	var x string
@@ -63,7 +44,7 @@ func GetSliceFromInput() []int {
 
 func Sort(slice []int, c chan []int) {
 	fmt.Println(slice)
-	BubbleSort(slice)
+	sort.Ints(slice)
 	c <- slice
 }
 
@@ -112,7 +93,7 @@ func main() {
 	slice = append(s1, s2...)
 	slice = append(slice, s3...)
 	slice = append(slice, s4...)
-	BubbleSort(slice)
+	sort.Ints(slice)
 	fmt.Println()
 	fmt.Println(slice)
 }
